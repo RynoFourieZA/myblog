@@ -1,0 +1,17 @@
+div.single-comment 
+  p.commenter
+    i.fa-solid.fa-message.fa-lg
+    = comment.commenter 
+    |
+    small.time-ago-comment
+      |< sent (
+      = time_ago_in_words(@article.created_at)
+      | )
+
+
+  p.comment
+    = comment.body
+
+  button
+    = link_to [comment.article, comment], data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do
+      i.fa-solid.fa-trash.fa-xl

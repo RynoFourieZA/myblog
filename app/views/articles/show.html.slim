@@ -1,0 +1,26 @@
+.article
+    = turbo_frame_tag "show-article", target: '_top' do
+
+        h1 data-controller="article"
+            div data-article-target="article" data-action="click->article#getArticle"
+                = @article.title
+        p
+            = @article.body
+        small
+            | Created at: #{time_ago_in_words(@article.created_at)} ago
+
+        ul.action-icons
+            button 
+                = link_to edit_article_path(@article) do
+                    i.fa-solid.fa-pen-to-square.fa-xl 
+            button
+                = link_to article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do
+                    i.fa-solid.fa-trash.fa-xl
+    / = turbo_frame_tag "comments-section" do
+    .comment-section
+        h2 Comments
+        = render @article.comments 
+
+        h2 Add a comment: 
+        = render 'comments/form'
+        

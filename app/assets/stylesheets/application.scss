@@ -1,0 +1,124 @@
+@use "./resets";
+@use "./navbar";
+@use "./comments";
+
+
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700
+  );
+
+turbo-frame {
+    display: block;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    padding: 0.1em 1em;
+    margin: 1em 0;
+  }
+
+turbo-stream {
+    display: block;
+    border: 1px solid rgb(46, 65, 213);
+    border-radius: 5px;
+    padding: 0.1em 1em;
+    margin: 1em 0;
+  }
+
+main {
+  text-align: center;
+  margin: 0 2em;
+}
+
+.article {
+  background-color: bisque;
+  text-align: start;
+
+  h1 {
+    padding: 1rem 0;
+    background-color: rgb(196, 252, 255);
+  }
+  
+  p {
+    padding: 0.5rem 0;
+  }
+
+  .action-icons {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: -40px;
+
+    button {
+      padding: 0.5rem;
+      border: 2px solid black;
+      
+      &:first-child {
+        margin-right: 1rem;
+      }
+
+      &:hover  {
+        border: 2px solid rgb(67, 219, 97);
+      }
+      
+      svg:hover {
+        border: none;
+        color: rgb(67, 219, 97);
+      }
+
+    }
+
+  }
+}
+
+// Index Page
+
+#list-item {
+  border-bottom: 1px solid #00000025;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.modal {
+  position: fixed;
+  z-index: 2;
+  padding: 2em;
+  width: 450px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  overflow: auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  /* Add the drop shadow */
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.19);
+}
+
+.close {
+  background-color: #25752a;
+  font-size: 12px;
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  text-decoration: none; 
+  width: 100px;
+  margin: 4px;
+}
+.close:hover {
+  background-color: #20a229;
+}
+
+.modal h1 {
+  margin-left: 2em;
+}
+
+.modal form {
+  margin-left: 2em; 
+}

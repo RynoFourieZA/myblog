@@ -1,0 +1,28 @@
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+  }
+  
+*, 
+*::before,
+*::after {
+    box-sizing: inherit;
+  }
+
+a, a:visited, a:active {
+    text-decoration: none;
+    color: black;
+  }
+
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+  }

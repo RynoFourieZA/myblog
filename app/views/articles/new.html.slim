@@ -1,0 +1,5 @@
+.modal 
+    = turbo_frame_tag "new_article" do
+        h1 New Article
+
+        = render "form", article: @article

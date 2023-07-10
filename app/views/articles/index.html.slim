@@ -1,0 +1,10 @@
+h1 Articles that teaches you tech!
+
+ul
+    - @articles.each do |article|
+        li#list-item
+            = link_to article.title, article
+            / img src=asset_url("/images/images.png") alt="Random image"
+
+= turbo_frame_tag "new_article" do
+    = link_to "New Article", new_article_path
